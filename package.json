@@ -1,0 +1,23 @@
+{
+  "name": "quiz-api-lowdb",
+  "version": "1.0.0",
+  "description": "",
+  "exports": "./app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "lowdb": "^3.0.0",
+    "nanoid": "^3.1.28"
+  },
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  }
+}

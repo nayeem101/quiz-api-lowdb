@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz app Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Quiz App Dashboard</span>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col col-lg-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="/frontend/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/frontend/create.html"
+                >Create Quiz</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/frontend/quizes.html">All Quiz</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col col-lg-9">
+          <form id="myForm">
+            <div class="mb-3">
+              <label for="question" class="form-label">Question</label>
+              <input
+                type="text"
+                class="form-control"
+                name="question"
+                id="question"
+                aria-describedby="question"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="answer" class="form-label">Answer</label>
+              <input
+                type="text"
+                class="form-control"
+                name="answer"
+                id="answer"
+                aria-describedby="answer"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="options" class="form-label">Options</label>
+
+              <div id="options-wrap" class="mb-2">
+                <input
+                  type="text"
+                  class="form-control option"
+                  name="options"
+                  placeholder="option"
+                />
+              </div>
+              <button type="button" class="btn btn-info" id="add-option">
+                Add option
+              </button>
+            </div>
+            <button type="submit" class="btn btn-primary w-25">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <script>
+        (() => {
+          //add a option
+          let options_wrap = document.getElementById("options-wrap");
+          let addOption = document.getElementById("add-option");
+          addOption.addEventListener("click", () => {
+            let div = document.createElement("div");
+            let input = `<div class="input-group">
+                              <input
+                                 type="text"
+                                 name="options"
+                                 class="form-control mt-2 option"
+                                 placeholder="Option"
+                                 required
+                              />`;
+            div.innerHTML = input;
+            div.className = "form-group";
+            options_wrap.append(div);
+          });
+          //post data
+          let myForm = document.getElementById("myForm");
+          myForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            let question = myForm["question"].value;
+            let answer = myForm["answer"].value;
+            let options = Array.from(myForm.querySelectorAll(".option")).map(
+              (opt) => opt.value
+            );
+            console.log({ question, answer, options });
+            let newQuiz = { question, answer, options };
+            //url
+            const url = "http://localhost:4000/quizes";
+            const response = await fetch(url, {
+              method: "POST",
+              body: JSON.stringify(newQuiz),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+            let data = await response.json();
+            console.log(data);
+          });
+        })();
+      </script>
+    </div>
+  </body>
+</html>

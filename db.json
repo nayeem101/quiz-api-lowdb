@@ -1,0 +1,65 @@
+{
+  "quizes": [
+    {
+      "id": "6JSX2U",
+      "question": "What does HTML stand for?",
+      "answer": "Hyper Text Markup Language",
+      "options": [
+        "Hyper Text Preprocessor",
+        "Hyper Text Markup Language",
+        "Hyper Text Multiple Language",
+        "Hyper Tool Multi Language"
+      ]
+    },
+    {
+      "id": "8ui3ne",
+      "question": "অ্যাকুচুয়েটর ব্যবহৃত হয় ?",
+      "answer": "রোবটিক্সে",
+      "options": [
+        "বায়োমেট্রিক্সে",
+        "ভার্চুয়াল রিয়েলিটিতে",
+        "ক্রায়োসার্জারিতে",
+        "রোবটিক্সে"
+      ]
+    },
+    {
+      "id": "U8VT5I",
+      "question": "What does PHP stand for?",
+      "answer": "Hypertext Preprocessor",
+      "options": [
+        "Hypertext Preprocessor",
+        "Hypertext Programming",
+        "Hypertext Preprogramming",
+        "Hometext Preprocessor"
+      ]
+    },
+    {
+      "id": "aBJr-E",
+      "question": "What does SQL stand for?",
+      "answer": "Structured Query Language",
+      "options": [
+        "Stylish Question Language",
+        "Stylesheet Query Language",
+        "Statement Question Language",
+        "Structured Query Language"
+      ]
+    },
+    {
+      "id": "phBMeX",
+      "question": "What does XML stand for?",
+      "answer": "eXtensible Markup Language",
+      "options": [
+        "eXtensible Markup Language",
+        "eXecutable Multiple Language",
+        "eXTra Multi-Program Language",
+        "eXamine Multiple Language"
+      ]
+    },
+    {
+      "id": "8g54lz",
+      "question": "this is a q",
+      "answer": "a",
+      "options": ["a", "b", "c", "d"]
+    }
+  ]
+}
